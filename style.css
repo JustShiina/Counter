@@ -1,0 +1,205 @@
+
+
+body {
+    
+    background-color: #222;
+}
+
+/*NAVBAR*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+li {
+    float: left;
+    border-right: 1px solid white;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:not(.active):hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #790606;
+}
+
+/*HOMEPAGE TEXT AND PICTURES*/
+
+.text {
+    margin-top: 60px;
+    padding: 20px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 30%;
+    font-size: large;
+}
+
+.text h1 {
+    margin-bottom: 50px;
+}
+
+.text p {
+    margin-bottom: 40px;
+    line-height: 25px;
+}
+
+.text p:last-child {
+    margin-bottom: 0;
+}
+
+.picture {
+    margin-left: 20px;
+}
+
+/*COUNTER*/
+
+/* COUNTER */
+
+.counter {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.counter h1 {
+    font-size: 50px;
+}
+
+#counter-value {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.counter button {
+    margin: 20px;
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.counter button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.counter button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.particle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url('symphony.png');
+    background-size: cover;
+    opacity: 1;
+    animation: explode 2s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    70% {
+        transform: translate(var(--x), var(--y)) scale(0.5);
+        opacity: 1; /* Bleibt sichtbar */
+    }
+    85% {
+        transform: translate(calc(var(--x) + 0px), calc(var(--y) - 20px)) scale(0.5);
+        opacity: 0.8; /* Leichtes Verblassen */
+    }
+    100% {
+        transform: translate(calc(var(--x) + 0px), calc(var(--y) - 40px)) scale(0.5);
+        opacity: 0; /* Verschwindet langsam */
+    }
+}
+
+/*ABOUT*/
+
+.about {
+    margin-top: 60px;
+    color: white;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+

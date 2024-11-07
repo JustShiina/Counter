@@ -182,15 +182,15 @@ li a:not(.active):hover {
     }
     70% {
         transform: translate(var(--x), var(--y)) scale(0.5);
-        opacity: 1; /* Bleibt sichtbar */
+        opacity: 1;
     }
     85% {
         transform: translate(calc(var(--x) + 0px), calc(var(--y) - 20px)) scale(0.5);
-        opacity: 0.8; /* Leichtes Verblassen */
+        opacity: 0.8;
     }
     100% {
         transform: translate(calc(var(--x) + 0px), calc(var(--y) - 40px)) scale(0.5);
-        opacity: 0; /* Verschwindet langsam */
+        opacity: 0;
     }
 }
 

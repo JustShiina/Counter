@@ -1,13 +1,18 @@
-let counter = 0; // Der aktuelle Wert des Counters
+let counter = 0;
 const explosionSound = new Audio('symphony.mp3');
-
-function sleep(milliseconds) {
-    return new Promise(resolve => setTimeout(resolve, milliseconds));
-}
 
 function updateCounter() {
     document.getElementById("counter-value").textContent = counter;
+    localStorage.setItem('counter', counter);
 }
+
+window.addEventListener('load', () => {
+    const savedCounter = localStorage.getItem('counter');
+    if (savedCounter !== null) {
+        counter = parseInt(savedCounter, 10);
+        updateCounter();
+    }
+});
 
 function increase() {
     counter++;
@@ -45,7 +50,7 @@ function createExplosion(button) {
             const x = Math.cos(angle) * distance;
             const y = Math.sin(angle) * distance;
 
-            // Setze die Partikel-Position
+           
             particle.style.left = `${centerX - particleSize / 2}px`;
             particle.style.top = `${centerY - particleSize / 2}px`;
             particle.style.setProperty('--x', `${x}px`);
@@ -53,11 +58,11 @@ function createExplosion(button) {
 
             container.appendChild(particle);
 
-            // Entferne das Partikel nach der Animation
+            
             particle.addEventListener('animationend', () => {
                 particle.remove();
             });
-        }, i * delayBetweenParticles); // Verzögerung pro Partikel
+        }, i * delayBetweenParticles);
     }
 }
 

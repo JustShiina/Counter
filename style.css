@@ -76,8 +76,6 @@ li a:not(.active):hover {
 
 /*COUNTER*/
 
-/* COUNTER */
-
 .counter {
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -173,6 +171,7 @@ li a:not(.active):hover {
     background-size: cover;
     opacity: 1;
     animation: explode 2s ease-out forwards;
+    pointer-events: none;
 }
 
 @keyframes explode {
